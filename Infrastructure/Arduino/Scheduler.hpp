@@ -1,15 +1,16 @@
+#pragma once
 #include <Arduino.h>
 #include "iScheduler.hpp"
 
 namespace Platform
 {
 
-  Tick Now()
+  inline Tick Now()
   {
     return millis();
   }
 
-  void Idle()
+  inline void Idle()
   {
     delay(1); // yields to ESP32 background tasks
   }

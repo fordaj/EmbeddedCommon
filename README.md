@@ -33,15 +33,15 @@ via `PLATFORM_ARDUINO` / `PLATFORM_PC`.
 
 ## Layout
 
-| Path | Contents |
-|---|---|
-| `Units/` | Strong-unit types (`Temperature`, `Illuminance`, `Time`, ...) and the full `Units.hpp` umbrella. All projects get all units. |
-| `Devices/` | Abstract `Logger` interface (+ per-platform implementations in `Platform/`). |
-| `Infrastructure/` | `iScheduler`/`iResetReason`, platform `Scheduler` (Arduino + PC), reset-reason shims. |
-| `Platform/` | `Platform.hpp` — the single platform-selection header (logger, scheduler, reset reason, `Platform::NowMicroseconds()`); `Platform/Features.hpp` — compile-time feature flags; per-platform glue. |
-| `Services/` | Service plumbing: `iServices`, `iWebServer`, `iRESTServer` (+ `Response::Error`, `DELETE` routes), `RESTServer` (httplib wrapper), `PCServices`, `ESP32Services`, `ESP32WiFi`. App-specific web routes and the service composition roots stay in the consuming project's `Services/`. |
-| `lib/` | Vendored third-party single headers: `httplib.h`, `json.hpp` (nlohmann). |
-| `scripts/host.py` | PlatformIO extra script: `ws2_32` for cpp-httplib on Windows hosts. |
+| Path              | Contents                                                                                                                                                                                                                                                                              |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Units/`          | Strong-unit types (`Temperature`, `Illuminance`, `Time`, ...) and the full `Units.hpp` umbrella. All projects get all units.                                                                                                                                                          |
+| `Devices/`        | Abstract `Logger` interface (+ per-platform implementations in `Platform/`).                                                                                                                                                                                                          |
+| `Infrastructure/` | `iScheduler`/`iResetReason`, platform `Scheduler` (Arduino + PC), reset-reason shims.                                                                                                                                                                                                 |
+| `Platform/`       | `Platform.hpp` — the single platform-selection header (logger, scheduler, reset reason, `Platform::NowMicroseconds()`); `Platform/Features.hpp` — compile-time feature flags; per-platform glue.                                                                                      |
+| `Services/`       | Service plumbing: `iServices`, `iWebServer`, `iRESTServer` (+ `Response::Error`, `DELETE` routes), `RESTServer` (httplib wrapper), `PCServices`, `ESP32Services`, `ESP32WiFi`. App-specific web routes and the service composition roots stay in the consuming project's `Services/`. |
+| `lib/`            | Vendored third-party single headers: `httplib.h`, `json.hpp` (nlohmann).                                                                                                                                                                                                              |
+| `scripts/host.py` | PlatformIO extra script: `ws2_32` for cpp-httplib on Windows hosts.                                                                                                                                                                                                                   |
 
 ## Feature flags
 

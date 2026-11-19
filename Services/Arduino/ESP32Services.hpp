@@ -25,7 +25,6 @@ public:
     resetReason.print();
 #if AIRFRAME_ENABLE_I2C
     Common::I2CUtil::Init();
-    Common::I2CUtil::Scan();
 #endif
 #if AIRFRAME_ENABLE_WIFI
     if (Configuration.isWiFiEnabled)
